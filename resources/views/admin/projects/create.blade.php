@@ -28,6 +28,17 @@
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
+
+            <p>Seleziona la tecnologia usata:</p>
+            <div class="mb-3 d-flex justify-content-center btn-group" role="group"
+                aria-label="Basic checkbox toggle button group">
+                @foreach ($tecnologies as $tecnology)
+                    <input type="checkbox" class="btn-check" id="btn_{{ $tecnology->id }}" autocomplete="off"
+                        name="tecnologies[]" value="{{ $tecnology->id }}">
+                    <label class="btn btn-outline-primary" for="btn_{{ $tecnology->id }}">{{ $tecnology->name }}</label>
+                @endforeach
+            </div>
+
             <div class="form-floating mb-3">
                 <textarea class="form-control @error('name') is-invalid @enderror" placeholder="Descrizione prodotto" id="description"
                     name="description" style="height: 200px">{{ old('description') }}</textarea>
