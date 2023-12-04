@@ -51,6 +51,7 @@ class TecnologyController extends Controller
             $form_data = $request->all();
             $new_tecnology = new Tecnology();
             $form_data['slug'] = Tecnology::generateSlug($form_data['name']);
+
             $new_tecnology->fill($form_data);
             $new_tecnology->save();
             return redirect()->route('admin.tecnologies.index')->with('success', 'Tecnologia inserita con successo');
