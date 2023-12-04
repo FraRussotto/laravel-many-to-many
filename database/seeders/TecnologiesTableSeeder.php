@@ -23,6 +23,7 @@ class TecnologiesTableSeeder extends Seeder
             $new_tipology = new Tecnology();
             $new_tipology->name = $item;
             $new_tipology->slug = Str::slug($item, '-');
+
             $new_tipology->save();
         }
     }
