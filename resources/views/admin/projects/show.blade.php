@@ -7,6 +7,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Date</th>
                 <th scope="col">Type</th>
+                <th scope="col">Tecnology</th>
                 <th scope="col">Description</th>
                 <th scope="col">Link</th>
                 <th scope="col">Action</th>
@@ -17,6 +18,13 @@
                 <td>{{ $project->name }}</td>
                 <td>{{ $project->date }}</td>
                 <td>{{ $project->type?->name ?? '-' }}</td>
+                <td>
+                    @forelse ($project->tecnologies as $tecnology)
+                        {{ $tecnology->name }}
+                    @empty
+                        -
+                    @endforelse
+                </td>
                 <td>{!! $project->description !!}</td>
                 <td>
                     <a href="{{ $project->link }}">{{ $project->link }}</a>
