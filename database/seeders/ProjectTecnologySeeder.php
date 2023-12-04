@@ -14,7 +14,7 @@ class ProjectTecnologySeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 40; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $project = Project::inRandomOrder()->first();
             $tecnology_id = Tecnology::inRandomOrder()->first()->id;
 
