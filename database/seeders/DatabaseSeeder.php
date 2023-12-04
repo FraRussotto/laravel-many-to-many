@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             TecnologiesTableSeeder::class,
             TypesTableSeeder::class,
             ProjectsTableSeeder::class,
+            ProjectTecnologySeeder::class
         ]);
     }
 }
