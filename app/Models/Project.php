@@ -27,6 +27,8 @@ class Project extends Model
         'date',
         'type',
         'description',
+        'image',
+        'image_original_name',
         'link',
         'isComplete'
     ];

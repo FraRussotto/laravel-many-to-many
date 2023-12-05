@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             $table->string('image')->after('description')->nullable();
+            $table->string('image_original_name')->after('image')->nullable();
         });
     }
 
@@ -23,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             $table->dropColumn('image');
+            $table->dropColumn('image_original_name');
         });
     }
 };

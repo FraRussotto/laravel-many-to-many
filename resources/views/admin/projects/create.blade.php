@@ -10,7 +10,7 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -22,7 +22,7 @@
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="date" name="date"
+                <input type="text" class="form-control @error('date') is-invalid @enderror" id="date" name="date"
                     aria-describedby="title" value="{{ old('date') }}">
                 @error('date')
                     <p class="text-danger">{{ $message }}</p>
@@ -40,16 +40,24 @@
             </div>
 
             <div class="form-floating mb-3">
-                <textarea class="form-control @error('name') is-invalid @enderror" placeholder="Descrizione prodotto" id="description"
-                    name="description" style="height: 200px">{{ old('description') }}</textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Descrizione prodotto"
+                    id="description" name="description" style="height: 200px">{{ old('description') }}</textarea>
                 <label for="floatingTextarea2">Description</label>
                 @error('description')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                    name="image" aria-describedby="title" value="{{ old('image') }}">
+                @error('image')
+                    <p class="text-danger">{{ $image }}</p>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="link" class="form-label">Link</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="link" name="link"
+                <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link"
                     aria-describedby="title" value="{{ old('link') }}">
                 @error('link')
                     <p class="text-danger">{{ $message }}</p>
